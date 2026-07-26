@@ -2,87 +2,200 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>NovelVerse</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f0f14;
-  color:white;
+
+background:
+linear-gradient(135deg,#09090f,#14142b,#0a0a16);
+
+color:white;
+
+overflow-x:hidden;
+
 }
 
 header{
-  padding:20px;
-  background:#161622;
-  text-align:center;
-  font-size:28px;
-  font-weight:bold;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.1);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#7c5cff;
+
+}
+
+.search{
+
+width:140px;
+
+padding:10px;
+
+border:none;
+
+border-radius:25px;
+
+background:#1d1d2d;
+
+color:white;
+
 }
 
 .hero{
-  padding:25px;
-  text-align:center;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
 }
 
 .hero h1{
-  font-size:32px;
+
+font-size:42px;
+
+line-height:1.2;
+
 }
 
-.card{
-  background:#1d1d2b;
-  margin:15px;
-  padding:15px;
-  border-radius:15px;
+.hero p{
+
+margin-top:15px;
+
+opacity:.8;
+
+max-width:600px;
+
 }
 
-button{
-  background:#6c5ce7;
-  color:white;
-  border:none;
-  padding:10px 20px;
-  border-radius:20px;
+.btn{
+
+margin-top:25px;
+
+padding:15px 40px;
+
+border-radius:40px;
+
+background:#7c5cff;
+
+border:none;
+
+font-size:18px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
-footer{
-  text-align:center;
-  padding:20px;
-  opacity:.7;
+.btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px #7c5cff;
+
 }
+
+.bg{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+z-index:-1;
+
+background:
+radial-gradient(circle at top,#5b35ff33,transparent 60%);
+
+animation:move 8s infinite alternate;
+
+}
+
+@keyframes move{
+
+0%{transform:translateY(-30px);}
+100%{transform:translateY(30px);}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="bg"></div>
+
 <header>
-📖 NovelVerse
+
+<div class="logo">📖 NovelVerse</div>
+
+<input class="search" placeholder="Search">
+
 </header>
 
 <section class="hero">
-<h1>Read Amazing Stories</h1>
-<p>Fantasy • Isekai • Adventure Novels</p>
+
+<h1>Read The Next Generation<br>Fantasy Novels</h1>
+
+<p>Millions of stories, adventures and legendary heroes in one place.</p>
+
+<button class="btn">Start Reading</button>
+
 </section>
-
-
-<div class="card">
-<h2>⚔️ The New World Hero</h2>
-<p>A young boy enters a mysterious world and discovers hidden powers.</p>
-<button>Read Now</button>
-</div>
-
-
-<div class="card">
-<h2>🔥 The Last Kingdom</h2>
-<p>A legendary warrior fights to save his lost kingdom.</p>
-<button>Read Now</button>
-</div>
-
-
-<footer>
-© 2026 NovelVerse
-</footer>
 
 </body>
 </html>
