@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NovelVerse</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,41 +13,97 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
+
 background:#09090f;
 color:#fff;
+overflow-x:hidden;
+
+}
+
+body::before{
+
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+
+background:
+
+radial-gradient(circle at top,#7c5cff22,transparent 60%),
+radial-gradient(circle at bottom,#00d4ff11,transparent 60%);
+
+z-index:-1;
+
+animation:bgmove 8s infinite alternate;
+
+}
+
+@keyframes bgmove{
+
+0%{transform:scale(1);}
+100%{transform:scale(1.08);}
+
 }
 
 header{
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
+
+padding:18px 22px;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
-padding:18px;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(15px);
-z-index:1000;
+
+background:rgba(20,20,30,.55);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
 }
 
 .logo{
-font-size:28px;
+
+font-size:30px;
+
 font-weight:700;
-color:#8b5cff;
+
+color:#8d68ff;
+
 }
 
 .search{
-background:#1c1c2b;
+
+background:#181825;
+
+padding:11px 18px;
+
+border-radius:35px;
+
 border:none;
-color:#fff;
-padding:10px 16px;
-border-radius:30px;
-width:150px;
+
+color:white;
+
+width:145px;
+
+outline:none;
+
 }
 
 .hero{
@@ -62,11 +118,13 @@ align-items:center;
 
 text-align:center;
 
-padding:20px;
+padding:25px;
 
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
-url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1400&q=80");
+
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+
+url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1600&q=80");
 
 background-size:cover;
 
@@ -76,35 +134,65 @@ background-position:center;
 
 .hero h1{
 
-font-size:55px;
+font-size:52px;
+
+font-weight:700;
+
+line-height:1.2;
 
 }
 
 .hero p{
 
-margin-top:20px;
+margin-top:18px;
 
 font-size:18px;
 
-opacity:.9;
+opacity:.85;
+
+}
+
+.buttons{
+
+margin-top:35px;
 
 }
 
 .btn{
 
-margin-top:30px;
-
-padding:15px 40px;
-
 background:#8b5cff;
-
-border:none;
 
 color:white;
 
-border-radius:35px;
+border:none;
 
-font-size:18px;
+padding:15px 34px;
+
+border-radius:40px;
+
+font-size:17px;
+
+margin:6px;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 25px #8b5cff;
+
+}
+
+.btn2{
+
+background:transparent;
+
+border:2px solid white;
 
 }
 
@@ -116,7 +204,9 @@ padding:35px 18px;
 
 .section h2{
 
-margin-bottom:20px;
+margin-bottom:18px;
+
+font-size:27px;
 
 }
 
@@ -124,9 +214,17 @@ margin-bottom:20px;
 
 display:flex;
 
+gap:16px;
+
 overflow:auto;
 
-gap:15px;
+padding-bottom:10px;
+
+}
+
+.cards::-webkit-scrollbar{
+
+display:none;
 
 }
 
@@ -134,11 +232,21 @@ gap:15px;
 
 min-width:170px;
 
-background:#171726;
+background:#161622;
 
 border-radius:18px;
 
 overflow:hidden;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px #8b5cff;
 
 }
 
@@ -146,7 +254,7 @@ overflow:hidden;
 
 width:100%;
 
-height:220px;
+height:235px;
 
 object-fit:cover;
 
@@ -156,17 +264,49 @@ object-fit:cover;
 
 padding:10px;
 
-font-size:18px;
-
 }
 
 .card p{
 
-padding:0 10px 15px;
+padding:0 10px 16px;
 
 opacity:.8;
 
 font-size:14px;
+
+}
+
+.feature{
+
+margin:20px;
+
+padding:25px;
+
+border-radius:22px;
+
+background:linear-gradient(135deg,#7c5cff,#4d37ca);
+
+}
+
+.feature h1{
+
+font-size:34px;
+
+}
+
+.feature p{
+
+margin-top:15px;
+
+line-height:1.8;
+
+opacity:.95;
+
+}
+
+.feature button{
+
+margin-top:20px;
 
 }
 
@@ -188,11 +328,29 @@ font-size:14px;
 
 <div>
 
-<h1>Read The Future Of Novels</h1>
+<h1>Read Stories<br>That Feel Alive</h1>
 
-<p>Fantasy • Action • Romance • Isekai</p>
+<p>
 
-<button class="btn">Start Reading</button>
+Fantasy • Action • Romance • Isekai
+
+</p>
+
+<div class="buttons">
+
+<button class="btn">
+
+📖 Start Reading
+
+</button>
+
+<button class="btn btn2">
+
+🔥 Explore
+
+</button>
+
+</div>
 
 </div>
 
@@ -200,7 +358,7 @@ font-size:14px;
 
 <section class="section">
 
-<h2>🔥 Trending Novels</h2>
+<h2>🔥 Trending</h2>
 
 <div class="cards">
 
@@ -210,7 +368,7 @@ font-size:14px;
 
 <h3>Shadow Hero</h3>
 
-<p>⭐4.9 • 3.2M Views</p>
+<p>⭐4.9 • 👁3.2M</p>
 
 </div>
 
@@ -220,7 +378,7 @@ font-size:14px;
 
 <h3>Dragon King</h3>
 
-<p>⭐4.8 • 2.8M Views</p>
+<p>⭐4.8 • 👁2.7M</p>
 
 </div>
 
@@ -230,13 +388,122 @@ font-size:14px;
 
 <h3>The Mage</h3>
 
-<p>⭐4.7 • 1.9M Views</p>
+<p>⭐4.7 • 👁1.8M</p>
 
 </div>
 
 </div>
 
 </section>
+
+<section class="feature">
+
+<h1>👑 Shadow Monarch</h1>
+
+<p>
+
+The weakest hunter awakens unlimited power and becomes the strongest being.
+
+</p>
+
+<button class="btn">
+
+Read Now
+
+</button>
+
+</section><section class="section">
+
+<h2>📚 Categories</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/300/420?11">
+<h3>⚔️ Action</h3>
+<p>Power • War</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/420?12">
+<h3>🧙 Fantasy</h3>
+<p>Magic • Adventure</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/420?13">
+<h3>❤️ Romance</h3>
+<p>Love Stories</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/420?14">
+<h3>👑 Isekai</h3>
+<p>Another World</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>⭐ Top Ranking</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/300/420?21">
+<h3>Solo Legend</h3>
+<p>⭐ 5.0 | 👁 12.5M</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/420?22">
+<h3>Dark Emperor</h3>
+<p>⭐ 4.9 | 👁 9.8M</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/420?23">
+<h3>Divine Sword</h3>
+<p>⭐ 4.8 | 👁 8.4M</p>
+</div>
+
+</div>
+
+</section>
+
+<nav style="
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#141420;
+display:flex;
+justify-content:space-around;
+padding:15px 0;
+border-top:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+">
+
+<div>🏠<br>Home</div>
+<div>🔍<br>Explore</div>
+<div>📚<br>Library</div>
+<div>👤<br>Profile</div>
+
+</nav>
+
+<footer style="
+text-align:center;
+padding:30px;
+margin-bottom:80px;
+opacity:.7;
+">
+
+© 2026 NovelVerse • Read Anywhere
+
+</footer>
 
 </body>
 </html>
