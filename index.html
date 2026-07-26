@@ -491,7 +491,19 @@ async function loadPosts() {
     return;
   }
 
-  console.log(data);
+  let html = "";
+
+  data.forEach(post => {
+    html += `
+      <div class="card">
+        <img src="${post.image_url}">
+        <h3>${post.title}</h3>
+        <p>${post.description}</p>
+      </div>
+    `;
+  });
+
+  document.getElementById("posts").innerHTML = html;
 }
 
 loadPosts();
