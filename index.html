@@ -513,7 +513,20 @@ const supabase = window.supabase.createClient(
   supabaseUrl,
   supabaseKey
 );
+async function loadPosts() {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*");
 
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  console.log(data);
+}
+
+loadPosts();
 console.log("Supabase Connected");
 </script>
 </body>
